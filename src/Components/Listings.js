@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Axios from "axios";
 import { MapContainer, TileLayer, Marker, Popup, Polyline } from 'react-leaflet';
 import { Icon } from "leaflet";
-import { Grid, AppBar, Typography, Button, Card, CardHeader, CardMedia, CardContent, IconButton, CardActions } from '@mui/material';
+import { Grid, AppBar, Typography, Button, Card, CardHeader, CardMedia, CardContent, IconButton, CardActions, CircularProgress } from '@mui/material';
 import { makeStyles } from '@material-ui/styles';
 import houseIconPng from "./assets/house.png";
 import apartmentIconPng from "./assets/house.png";
@@ -34,6 +35,7 @@ const useStyles = makeStyles({
 });
 
 function Listings() {
+
     const classes = useStyles();
     const houseicon = new Icon({
         iconUrl: houseIconPng,
@@ -56,10 +58,40 @@ function Listings() {
         [51.51, -0.1],
         [51.51, -0.12],
     ]
+
+    const [allListings, setAllListings] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() =>{
+        const source = Axios.CancelToken.source();
+        async function getAllListings(){
+            try {
+                const response = await Axios.get('/api/listings/', {cancelToken: source.token});
+                setAllListings(response.data);
+                setIsLoading(false);
+            } catch(error){
+                console.log(error.response);
+            }
+        }
+        getAllListings();
+        return ()=>{
+            source.cancel();
+        }
+    }, []);
+    
+
+    if(isLoading === true){
+        return (
+            <Grid container justifyContent="center" alignItems="center" style={{height: "100vh"}}>
+                <CircularProgress />
+            </Grid>
+        )
+    }
+
     return (
         <Grid container>
             <Grid item xs={4}>
-                {data.map((listing) => {
+                {allListings.map((listing) => {
                     return (
                         <Card key={listing.id} className={classes.cardWrapper}>
                             <CardHeader
@@ -111,7 +143,7 @@ function Listings() {
                                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                             />
 
-                            {data.map((listing) => {
+                            {allListings.map((listing) => {
                                 function displayIcon() {
                                     if (listing.listing_type === 'House') {
                                         return houseicon;

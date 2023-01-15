@@ -1,9 +1,11 @@
 import { CssBaseline, Typography } from '@mui/material';
 import { Button, AppBar, Toolbar } from "@mui/material";
 import { makeStyles } from '@material-ui/styles';
-import React from 'react';
+import React, {useContext} from 'react';
 import zIndex from '@mui/material/styles/zIndex';
 import {Link, useNavigate} from "react-router-dom";
+
+import StateContext from '../Contexts/StateContext';
 
 const useStyle = makeStyles({
     leftNav: {
@@ -38,6 +40,9 @@ const useStyle = makeStyles({
 function Header() {
     const classes = useStyle();
     const navigate = useNavigate();
+
+	const GlobalState = useContext(StateContext);
+
     return (
         <AppBar position="static">
             <Toolbar>
@@ -50,7 +55,8 @@ function Header() {
                 </div>
                 <div className={classes.rightNav}>
                     <Button color="inherit" className={classes.propertBtn}>Add Property</Button>
-                    <Button color="inherit" onClick={() => navigate('/login')} className={classes.loginBtn}>Login</Button>
+                    {GlobalState.userUsername !== '' ? <Button color="inherit" onClick={() => navigate('/login')} className={classes.loginBtn}>{GlobalState.userUsername}</Button>: <Button color="inherit" onClick={() => navigate('/login')} className={classes.loginBtn}>Login</Button>}
+                    
                 </div>
             </Toolbar>
         </AppBar>

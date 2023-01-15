@@ -159,8 +159,8 @@ function Listings() {
                                     <Marker key={listing.id}
                                         icon={displayIcon()}
                                         position={[
-                                            listing.location.coordinates[0],
-                                            listing.location.coordinates[1]
+                                            listing.latitude,
+                                            listing.longitude
                                         ]}>
                                         <Popup>
                                             <Typography variant='h5'>{listing.title}</Typography>

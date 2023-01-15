@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import { StyledEngineProvider } from '@mui/material/styles';
 import Home from './Components/Home';
+import AddProperty from './Components/AddProperty';
 import Listings from './Components/Listings';
 import Login from './Components/Login';
 import NotFound from './Components/NotFound';
@@ -72,6 +73,7 @@ function App() {
                 <Route exact path="/listings" element={<Listings />} />
                 <Route exact path="/login" element={<Login />} />
                 <Route exact path="/register" element={<Register />} />
+                <Route exact path="/add-property" element={<AddProperty />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </BrowserRouter>

@@ -62,7 +62,6 @@ class Listing(models.Model):
     cctv = models.BooleanField(default=False)
     parking = models.BooleanField(default=False)
     date_posted = models.DateTimeField(default=timezone.now)
-    location = models.PointField(blank=True, null=True, srid=4326)
     latitude = models.FloatField(blank=True, null=True)
     longitude = models.FloatField(blank=True, null=True)
     picture1 = models.ImageField(

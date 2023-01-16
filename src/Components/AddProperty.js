@@ -934,7 +934,7 @@ function AddProperty() {
     useEffect(() =>{
         console.log(state.latitudeValue, state.longitudeValue)
     }, [state.latitudeValue, state.longitudeValue]);
-    
+
 	function FormSubmit(e) {
 		e.preventDefault();
 
@@ -1005,6 +1005,7 @@ function AddProperty() {
 					);
 
 					dispatch({ type: "openTheSnack" });
+                    navigate('/listings')
 				} catch (e) {
 					dispatch({ type: "allowTheButton" });
 				}
@@ -1511,6 +1512,7 @@ function AddProperty() {
 						/>
 
 						<TheMapComponent />
+                        
 						{BoroughDisplay()}
 						<Marker
 							draggable

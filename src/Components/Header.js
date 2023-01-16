@@ -99,7 +99,6 @@ function Header() {
 		navigate("/profile");
 	}
 
-
     return (
         <AppBar position="static">
             <Toolbar>
@@ -108,7 +107,7 @@ function Header() {
                 </div>
                 <div>
                     <Button color="inherit" onClick={() => navigate('/listings')} style={{ marginRight: '2rem' }}><Typography variant='h6'>Listings</Typography></Button>
-                    <Button color="inherit" style={{ marginLeft: '2rem' }}><Typography variant='h6'>Agencies</Typography></Button>
+                    <Button color="inherit" style={{ marginLeft: '2rem' }} onClick={() => navigate('/agencies')}><Typography variant='h6'>Agencies</Typography></Button>
                 </div>
                 <div className={classes.rightNav}>
                     <Button color="inherit" className={classes.propertBtn} onClick={() => navigate('/add-property')}>Add Property</Button>
@@ -122,7 +121,7 @@ function Header() {
                             'aria-labelledby': 'basic-button',
                         }}
                     >
-                        <MenuItem className={classes.profileBtn} onClick={handleClose}>Profile</MenuItem>
+                        <MenuItem className={classes.profileBtn} onClick={HandleProfile}>Profile</MenuItem>
                         <MenuItem className={classes.logoutBtn} onClick={HandleLogout}>Logout</MenuItem>
                     </Menu>
                 </div>

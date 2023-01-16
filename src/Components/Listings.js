@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Axios from "axios";
-import { MapContainer, TileLayer, Marker, Popup, Polyline } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, Polyline, useMap } from 'react-leaflet';
 import { Icon } from "leaflet";
 import { Grid, AppBar, Typography, Button, Card, CardHeader, CardMedia, CardContent, IconButton, CardActions, CircularProgress } from '@mui/material';
 import { makeStyles } from '@material-ui/styles';
 import houseIconPng from "./assets/house.png";
 import apartmentIconPng from "./assets/house.png";
 import officeIconPng from "./assets/office-building.png";
-import data from "./assets/Data/Dummydata";
+import RoomIcon from '@mui/icons-material/Room';
+import { useImmerReducer } from "use-immer"; 
 
 
 const useStyles = makeStyles({
@@ -53,6 +54,26 @@ function Listings() {
     const [latitude, setLatitude] = useState(51.505);
     const [longitude, setLongitude] = useState(-0.09);
 
+    const initialState = {
+		mapInstance: null,
+	};
+
+    function ReducerFuction(draft, action) {
+		switch (action.type) {
+			case "getMap":
+				draft.mapInstance = action.mapData;
+				break;
+		}
+	}
+
+    const [state, dispatch] = useImmerReducer(ReducerFuction, initialState);
+
+	function TheMapComponent() {
+		const map = useMap();
+		dispatch({ type: "getMap", mapData: map });
+		return null;
+	}
+
     const polylineOne = [
         [51.505, -0.09],
         [51.51, -0.1],
@@ -97,7 +118,14 @@ function Listings() {
                             <CardHeader
 
                                 action={
-                                    <IconButton aria-label="settings">
+                                    <IconButton aria-label="settings"
+                                    onClick={() =>
+                                        state.mapInstance.flyTo(
+                                            [listing.latitude, listing.longitude],
+                                            16
+                                        )
+                                    }>
+                                        <RoomIcon />
                                     </IconButton>
                                 }
                                 title={listing.title}
@@ -127,6 +155,7 @@ function Listings() {
                             <CardActions disableSpacing>
 
                                 <IconButton aria-label="share">
+                                    Seller: {listing.seller_username}
                                 </IconButton>
 
                             </CardActions>
@@ -142,6 +171,8 @@ function Listings() {
                                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                             />
+
+                            <TheMapComponent />
 
                             {allListings.map((listing) => {
                                 function displayIcon() {

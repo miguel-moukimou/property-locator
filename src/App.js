@@ -10,6 +10,9 @@ import NotFound from './Components/NotFound';
 import { CssBaseline } from '@mui/material';
 import Header from './Components/Header';
 import Register from './Components/Register';
+import Profile from "./Components/Profile";
+import Agencies from "./Components/Agencies";
+
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useImmerReducer } from "use-immer";
 
@@ -74,6 +77,8 @@ function App() {
                 <Route exact path="/login" element={<Login />} />
                 <Route exact path="/register" element={<Register />} />
                 <Route exact path="/add-property" element={<AddProperty />} />
+                <Route exact path="/profile" element={<Profile />} />
+                <Route exact path="/agencies" element={<Agencies />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </BrowserRouter>

@@ -1,11 +1,12 @@
 from django.contrib import admin
-from listings.models import Listing
-#from .forms import ListingsForm
+from listings.models import Listing, Poi
+from .forms import PoiForm
 
 # Register your models here.
 
-#class ListingAdmin(admin.ModelAdmin):
-#    form = ListingsForm
+class PoiAdmin(admin.ModelAdmin):
+    form = PoiForm
 
 admin.site.register(Listing)
+admin.site.register(Poi, PoiAdmin)
 

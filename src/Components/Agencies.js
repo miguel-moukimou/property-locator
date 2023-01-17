@@ -59,7 +59,7 @@ function Agencies() {
 				const response = await Axios.get(
 					`/api/profiles/`
 				);
-
+                console.log(response);        
 				dispatch({
 					type: "catchAgencies",
 					agenciesArray: response.data,

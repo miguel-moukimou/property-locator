@@ -66,15 +66,15 @@ class Listing(models.Model):
     latitude = models.FloatField(blank=True, null=True)
     longitude = models.FloatField(blank=True, null=True)
     picture1 = models.ImageField(
-        blank=True, null=True, upload_to="pictures/%Y/%m/%d/")
+        blank=True, null=True)
     picture2 = models.ImageField(
-        blank=True, null=True, upload_to="pictures/%Y/%m/%d/")
+        blank=True, null=True)
     picture3 = models.ImageField(
-        blank=True, null=True, upload_to="pictures/%Y/%m/%d/")
+        blank=True, null=True)
     picture4 = models.ImageField(
-        blank=True, null=True, upload_to="pictures/%Y/%m/%d/")
+        blank=True, null=True)
     picture5 = models.ImageField(
-        blank=True, null=True, upload_to="pictures/%Y/%m/%d/")
+        blank=True, null=True)
 
     def __str__(self):
         return self.title

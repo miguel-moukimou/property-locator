@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 import Axios from "axios";
 import { MapContainer, TileLayer, Marker, Popup, Polyline, useMap } from 'react-leaflet';
 import { Icon } from "leaflet";
@@ -36,6 +37,8 @@ const useStyles = makeStyles({
 });
 
 function Listings() {
+
+    const navigate = useNavigate();
 
     const classes = useStyles();
     const houseicon = new Icon({
@@ -135,6 +138,7 @@ function Listings() {
                                 component="img"
                                 image={listing.picture1}
                                 title={listing.title}
+                                onClick={() => navigate(`/listings/${listing.id}`)}
                             />
                             <CardContent>
                                 <Typography variant="body2" component="p">
@@ -143,11 +147,13 @@ function Listings() {
 
                                 {listing.property_status === "Sale" ?(
                                     <Typography className={classes.priceOverlay} variant="body">
-                                    {listing.listing_type}: EUR {listing.price}
+                                    {listing.listing_type}: EUR {listing.price.toString()
+												.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                                  </Typography>
                                 ) : (
                                     <Typography className={classes.priceOverlay} variant="body">
-                                    {listing.listing_type}: EUR {listing.price} / {listing.rental_frequency}
+                                    {listing.listing_type}: EUR {listing.price.toString()
+												.replace(/\B(?=(\d{3})+(?!\d))/g, ",")} / {listing.rental_frequency}
                                 </Typography>
                                 )}
                                 
@@ -197,7 +203,7 @@ function Listings() {
                                             <Typography variant='h5'>{listing.title}</Typography>
                                             <img src={listing.picture1} style={{ height: "14rem", width: "18rem" }} />
                                             <Typography variant='body1'>{listing.description.substring(0, 150)}...</Typography>
-                                            <Button variant='contained'>Show details</Button>
+                                            <Button variant='contained' onClick={() => navigate(`/listings/${listing.id}`)} >Show details</Button>
                                         </Popup>
 
                                     </Marker>

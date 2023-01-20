@@ -14,6 +14,7 @@ import Profile from "./Components/Profile";
 import Agencies from "./Components/Agencies";
 import AgencyDetail from "./Components/AgencyDetail";
 import ListingDetail from "./Components/ListingDetail";
+import Created from "./Components/Created";
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useImmerReducer } from "use-immer";
@@ -80,6 +81,7 @@ function App() {
                 <Route exact path="/login" element={<Login />} />
                 <Route exact path="/register" element={<Register />} />
                 <Route exact path="/add-property" element={<AddProperty />} />
+                <Route exact path="/created" element={<Created />} />
                 <Route exact path="/profile" element={<Profile />} />
                 <Route exact path="/agencies" element={<Agencies />} />
                 <Route exact path="/agencies/:id" element={<AgencyDetail />} />

@@ -1,0 +1,1 @@
+web: gunicorn propertylocatorservice.wsgi  --log-file -

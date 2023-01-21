@@ -1,6 +1,7 @@
 import { CssBaseline, Typography } from '@mui/material';
 import { Button, AppBar, Toolbar } from "@mui/material";
 import { makeStyles } from '@material-ui/styles';
+import { useNavigate } from "react-router-dom";
 import React from 'react';
 import city from "./assets/city-hero.png"
 import zIndex from '@mui/material/styles/zIndex';
@@ -30,6 +31,7 @@ const useStyle = makeStyles({
     },
 })
 function Home() {
+    const navigate = useNavigate();
     const classes = useStyle();
     return (
         <>

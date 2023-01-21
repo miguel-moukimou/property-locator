@@ -37,7 +37,7 @@ function Home() {
                 <img src={city} className={classes.cityHero} />
                 <div className={classes.overlayText}>
                     <Typography variant='h1' className={classes.homeTitle}>FIND YOUR <span style={{ color: "green" }}>NEXT PROPERTY</span>  ON OUR WEBSITE</Typography>
-                    <Button variant='contained' className={classes.heroButton}>SEE ALL PROPERTIES</Button>
+                    <Button variant='contained' className={classes.heroButton} onClick={() =>navigate('/listings/')}>SEE ALL PROPERTIES</Button>
                 </div>
             </div>
         </>

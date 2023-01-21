@@ -68,7 +68,7 @@ function Profile() {
 		async function GetProfileInfo() {
 			try {
 				const response = await Axios.get(
-					`/api/profiles/${GlobalState.userId}/`
+					`https://properties-locator-service.herokuapp.com/api/profiles/${GlobalState.userId}/`
 				);
 
 				dispatch({

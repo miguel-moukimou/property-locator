@@ -117,7 +117,7 @@ function ListingDetail() {
 		async function GetListingInfo() {
 			try {
 				const response = await Axios.get(
-					`/api/listings/${params.id}/`
+					`https://properties-locator-service.herokuapp.com/api/listings/${params.id}/`
 				);
 
 				dispatch({
@@ -135,7 +135,7 @@ function ListingDetail() {
 			async function GetProfileInfo() {
 				try {
 					const response = await Axios.get(
-						`/api/profiles/${state.listingInfo.seller}/`
+						`https://properties-locator-service.herokuapp.com/api/profiles/${state.listingInfo.seller}/`
 					);
 
 					dispatch({
@@ -187,7 +187,7 @@ function ListingDetail() {
 		if (confirmDelete) {
 			try {
 				const response = await Axios.delete(
-					`/api/listings/${params.id}/delete/`
+					`https://properties-locator-service.herokuapp.com/api/listings/${params.id}/delete/`
 				);
 
 				dispatch({ type: "openTheSnack" });

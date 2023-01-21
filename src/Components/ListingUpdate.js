@@ -211,7 +211,7 @@ function ListingUpdate(props) {
 
 				try {
 					const response = await Axios.patch(
-						`/api/listings/${props.listingData.id}/update/`,
+						`https://properties-locator-service.herokuapp.com/api/listings/${props.listingData.id}/update/`,
 						formData
 					);
 

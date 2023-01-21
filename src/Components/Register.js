@@ -173,7 +173,7 @@ function Register() {
 			const source = Axios.CancelToken.source();
 			async function SignUp() {
 				try {
-					const response = await Axios.post('/api-auth-djoser/users/',
+					const response = await Axios.post('https://properties-locator-service.herokuapp.com/api-auth-djoser/users/',
 						{
 							username: state.usernameValue,
 							email: state.emailValue,

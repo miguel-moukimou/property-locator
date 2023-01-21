@@ -114,7 +114,7 @@ function ProfileUpdate(props) {
 
 				try {
 					const response = await Axios.patch(
-						`/api/profiles/${GlobalState.userId}/update/`,
+						`https://properties-locator-service.herokuapp.com/api/profiles/${GlobalState.userId}/update/`,
 						formData
 					);
 

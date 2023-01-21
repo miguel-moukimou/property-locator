@@ -65,7 +65,7 @@ function AgencyDetail() {
 		async function GetProfileInfo() {
 			try {
 				const response = await Axios.get(
-					`/api/profiles/${params.id}/`
+					`https://properties-locator-service.herokuapp.com/api/profiles/${params.id}/`
 				);
 
 				dispatch({

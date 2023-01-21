@@ -91,7 +91,7 @@ function Login() {
 			async function SignIn() {
 				try {
 					const response = await Axios.post(
-						"/api-auth-djoser/token/login/",
+						"https://properties-locator-service.herokuapp.com/api-auth-djoser/token/login/",
 						{
 							username: state.usernameValue,
 							password: state.passwordValue,
@@ -129,7 +129,7 @@ function Login() {
 			async function GetUserInfo() {
 				try {
 					const response = await Axios.get(
-						"/api-auth-djoser/users/me/",
+						"https://properties-locator-service.herokuapp.com/api-auth-djoser/users/me/",
 						{
 							headers: { Authorization: "Token ".concat(state.token) },
 						},

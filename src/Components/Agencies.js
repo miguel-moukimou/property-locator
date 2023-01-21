@@ -57,7 +57,7 @@ function Agencies() {
 		async function GetAgencies() {
 			try {
 				const response = await Axios.get(
-					`/api/profiles/`
+					`https://properties-locator-service.herokuapp.com/api/profiles/`
 				);
                 console.log(response);        
 				dispatch({

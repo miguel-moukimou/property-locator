@@ -90,7 +90,7 @@ function Listings() {
         const source = Axios.CancelToken.source();
         async function getAllListings(){
             try {
-                const response = await Axios.get('/api/listings/', {cancelToken: source.token});
+                const response = await Axios.get('https://properties-locator-service.herokuapp.com/api/listings/', {cancelToken: source.token});
                 setAllListings(response.data);
                 setIsLoading(false);
             } catch(error){

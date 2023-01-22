@@ -1,7 +1,7 @@
 # Properties locator
 
 
-![mockup images](assets/readme/mockup-image.png)
+![mockup images](https://github.com/miguel-moukimou/property-locator/blob/master/src/Components/assets/Screenshot%202023-01-21%20160654.png)
 
 
 The goal of this project is to offer a geolocation based real estate web application, consisting of a front application built in React and a backend built in Django and Python.
@@ -192,13 +192,13 @@ The font used across the whole site is Roboto.
 
 
 ### Home Page
-![NoPlast categories section image](assets/readme/noplast-categories.png)
+![Home section image](https://github.com/miguel-moukimou/property-locator/blob/master/src/Components/assets/Screenshot%202023-01-21%20160654.png)
 
 *  Invites the user to click on a button to see a list of properties that are available on the website.
 
 
 #### Listing page
-![NoPlast about section image](assets/readme/noplast-about.png)
+![Listing section image](https://github.com/miguel-moukimou/property-locator/blob/master/src/Components/assets/Screenshot%202023-01-22%20145733.png)
 
 * Provide relevant information to the user looking for properties to buy or to rent.
 * Provide an interactive map to help with locating the properties
@@ -207,14 +207,14 @@ The font used across the whole site is Roboto.
 
 
 #### Agencies pages
-![NoPlast guide section image](assets/readme/noplast-guide.png)
+![Agencies section image](https://github.com/miguel-moukimou/property-locator/blob/master/src/Components/assets/agencies.png)
 
 * Provides an overview of the agencies known on the website and the number of properties each of them holds
 * provides a button, when clicked, the details page of the agency is displayed
 
 
 ### Add property Page
-![NoPlast products page image](assets/readme/noplast-products.png)
+![properties page image](https://github.com/miguel-moukimou/property-locator/blob/master/src/Components/assets/add-property.png)
 
 * provides a form and map to geolocalise a property and add it to the application database.
 
@@ -223,7 +223,7 @@ The font used across the whole site is Roboto.
 
 
 ### Listing Details Page
-![NoPlast product details page image](assets/readme/noplast-product-details.png)
+![Listing details page image](ahttps://github.com/miguel-moukimou/property-locator/blob/master/src/Components/assets/listing-details.png)
 
 * The products navigation bar is present in case the user wants to go back to the listings.
 
@@ -237,7 +237,7 @@ The font used across the whole site is Roboto.
 
 
 ### Agency Details Page
-![NoPlast checkout page image](assets/readme/noplast-checkout.png)
+![Agency details page image](https://github.com/miguel-moukimou/property-locator/blob/master/src/Components/assets/agency-details.png)
 
 * Shows details information about the agency.
 
@@ -247,7 +247,7 @@ The font used across the whole site is Roboto.
 
 
 ### Profile Page
-![NoPlast profile page image](assets/readme/noplast-profile.png)
+![profile page image](https://github.com/miguel-moukimou/property-locator/blob/master/src/Components/assets/profile-page.png)
 
 * Provide a form for the registered user to update their default information.
 
@@ -258,13 +258,13 @@ The font used across the whole site is Roboto.
 
 Page | Purpose | Image |
 --- | --- | --- |
-Sign Up | Allow the user to sign up an account for the website. | ![NoPlast Sign Up Page](assets/readme/noplast-sign-up.png) |
-Sign In | Allow the registered user to sign in with their account. | ![NoPlast Sign In Page](assets/readme/noplast-sign-in.png) |
-Sign Out | Allow the registered user to sign out from their account. | ![NoPlast Sign Out Page](assets/readme/noplast-sign-out.png) |
+Sign Up | Allow the user to sign up an account for the website. | ![Sign Up Page](https://github.com/miguel-moukimou/property-locator/blob/master/src/Components/assets/signup.png) |
+Sign In | Allow the registered user to sign in with their account. | ![Sign In Page](https://github.com/miguel-moukimou/property-locator/blob/master/src/Components/assets/signin.png) |
+Sign Out | Allow the registered user to sign out from their account. | ![Sign Out Page](https://github.com/miguel-moukimou/property-locator/blob/master/src/Components/assets/logout.png) |
 
 
 ### 404 Error Page
-![NoPlast 404 error page image](assets/readme/noplast-404.png)
+![NoPlast 404 error page image](https://github.com/miguel-moukimou/property-locator/blob/master/src/Components/assets/404.png)
 
 * Provided information to the user in case the address entered cannot be found.
 
